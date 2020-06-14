@@ -25,16 +25,13 @@ generate.addEventListener('click', () => {
 	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
 
-// Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
-
 // Write password to the #password input
 function generatePassword(lower, upper, number, symbol, length) {
 	let generatedPassword = '';
 	const typesCount = lower + upper + number + symbol;
 	const typesArr = [{lower}, {upper}, {number}, {symbol}].filter(item => Object.values(item)[0]);
 	
-	// Doesn't have a selected type
+	// No password criteria selected 
 	if(typesCount === 0) {
 		window.alert("Please select password criteria.");
 	}
@@ -44,16 +41,16 @@ function generatePassword(lower, upper, number, symbol, length) {
 		typesArr.forEach(type => {
 			const funcName = Object.keys(type)[0];
 			generatedPassword += randomFunc[funcName]();
-		});
-	}
+	});
+}
 	
-	const finalPassword = generatedPassword.slice(0, length);
+const finalPassword = generatedPassword.slice(0, length);
 	
-	return finalPassword;
+return finalPassword;
 }
 
 function getRandomLower() {
-	return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
 }
 
 function getRandomUpper() {
