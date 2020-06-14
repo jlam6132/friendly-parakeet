@@ -1,4 +1,4 @@
-# Password Generator Starter Code
+# My Password Generator 
 * Generates secure passwords with a click of a button
 * Given password criteria selection: length of characters (minimum 8 characters and maximum 128 characters), upper and lower case letters, numbers, and special characters. 
 
